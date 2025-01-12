@@ -1,0 +1,124 @@
+-----------------------------------------------
+1. SetUp Virtual Environment 
+
+1. Open your terminal or command prompt.
+2. Navigate to the folder where you want to create your project.
+3. Run this command to create a virtual environment:
+
+• python -m venv env
+• .\env\Scripts\activate
+
+-----------------------------------------------
+2. Install Django
+
+install Django using pip, Python’s package manager
+
+• pip install django
+• python -m django --version
+
+-----------------------------------------------
+3. Create Django project 
+
+To start a new project, run these commands:
+
+• django-admin startproject project_name
+• cd project_name (navigate into this folder)
+• python manage.py runserver
+
+If Django Welcome Page is there 
+ = Environment is Ready !
+
+-----------------------------------------------
+Understanding Django’s Project Structure
+
+1. manage.py
+This is Django’s command-line utility. You’ll use it to run the server, create apps, and apply database migrations.
+
+2. settings.py
+This file contains your project’s configurations, such as database settings, installed apps, and middleware.
+
+3. urls.py
+This file defines the routes for your application, mapping URLs to views.
+
+4. wsgi.py/asgi.py
+These files handle server deployment and communication between your app and the web server.
+
+-----------------------------------------------
+4. Creating My First Django App 
+
+• Apps  are modular components of your project
+
+• Generate an app
+-> python manage.py startapp app_name
+
+• Add app_name  to your project’s settings 
+-> open settings.py and add 'app_name', 
+to the INSTALLED_APPS list.
+
+-----------------------------------------------
+Understanding App Structure
+
+1. models.py: 
+Define your database structure here.
+
+2. views.py: 
+Write the logic for handling user requests and returning responses.
+Handles user requests and responses.
+
+3. urls.py: 
+Create routes for this app ( create this file manually).
+Link views to URLS in urls.py
+
+2.1. What is a View?
+A view is a Python function that takes a web request and returns a web response.
+• Open myapp/views.py
+
+from django.http import HttpResponse              
+                                                                                           
+def home(request):                                                     
+    return HttpResponse("Hello, World!")             
+
+3.1. What are Urls?
+• Now, connect this view to a URL. 
+• Open myproject/urls.py 
+
+from django.urls import path                                
+from myapp import views                                      
+                                                                                         
+urlpatterns = [                                                            
+    path('', views.home, name='home'),               
+]                                                                                       
+
+4. What is a Template?
+A template is an HTML file that lets you create dynamic web pages. 
+• Create a folder named templates inside your app_name directory.
+• Add a file called home.html with this content:
+
+<!DOCTYPE html>  
+<html>     
+<head>    
+    <title>Welcome</title>  
+</head>  
+<body>    
+    <h1>Hello, Django Templates!</h1>  
+</body>   
+</html>   
+
+• Update your view to render this template:
+
+    ->  open myapp/views.py                                        
+                                                                                         
+from django.shortcuts import render                
+                                                                                         
+def home(request):                                                   
+    return render(request, 'home.html')              
+                                                                                         
+
+-----------------------------------------------
+5. Models and Databases
+
+Django uses models to define the structure of your database. 
+• Open myapp/models.py 
+• Define a model:
+
+from django.db import models
