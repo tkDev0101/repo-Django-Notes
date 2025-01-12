@@ -1,0 +1,39 @@
+Git Workflow Explanation
+
+
+Final Correct Sequence
+Here’s the corrected sequence of commands for your workflow:
+
+Initialize or Clone the Repository:
+
+bash
+Copy code
+git init  # Only if starting fresh
+git remote add origin [repository-url]
+git pull origin main
+git checkout main
+Push Code to Main:
+
+bash
+Copy code
+git status
+git add .
+git status
+git commit -m "Meaningful message"
+git push origin main
+Work on a New Branch:
+
+bash
+Copy code
+git branch task2
+git switch task2
+git add .
+git commit -m "Second save"
+git push origin task2
+Notes for Working with Branches:
+Avoid spaces in branch names. Use dashes or underscores instead, e.g., task-2.
+Always ensure you are on the correct branch before making changes:
+bash
+Copy code
+git branch  # To check the current branch
+Let me know if you need further clarification! 😊
