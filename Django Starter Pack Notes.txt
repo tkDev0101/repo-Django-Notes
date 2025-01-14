@@ -122,3 +122,45 @@ Django uses models to define the structure of your database.
 • Define a model:
 
 from django.db import models
+
+
+
+                                       
+
+-----------------------------------------------
+
+Different Versions of Views in DRF
+
+
+In Django, there are two primary types of views for handling requests and returning responses:
+
+1. Function-Based Views (FBVs): 
+2. Class-Based Views (CBVs): 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
