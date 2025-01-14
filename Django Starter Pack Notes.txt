@@ -131,21 +131,41 @@ from django.db import models
 
 Different Versions of Views in DRF
 
+In DRF, there are 3 types of views for handling requests and returning responses:
+	1. API Views
+	2. Generic Views
+	3. Viewsets
 
-In Django, there are two primary types of views for handling requests and returning responses:
+----------------------------------------------------------------------------------------------
+1. API Views
 
-1. Function-Based Views (FBVs): 
-2. Class-Based Views (CBVs): 
+Function-Based Views (FBVs):
+  - FBVs in DRF are similar to regular Django views but are tailored to handle API requests. They use DRF's decorators to parse request data and return appropriate responses.
+
+Class-Based Views (CBVs):
+  - CBVs in DRF are classes that handle HTTP methods through methods like get, post, put, etc. They provide better structure and scalability.
+
+----------------------------------------------------------------------------------------------
+
+2. Generic Views
+
+Generic views are higher-level abstractions over CBVs. They handle common patterns, such as fetching objects or creating resources, with minimal code.
 
 
+----------------------------------------------------------------------------------------------
+
+3. Viewsets
+
+Viewsets combine the logic for handling multiple HTTP methods (GET, POST, PUT, DELETE, etc.) into a single class. They are used with Routers, which automatically generate URL patterns for the viewset.
 
 
+----------------------------------------------------------------------------------------------
 
-
-
-
-
-
+When to Use Which?
+  - FBVs: Simple and quick APIs.
+  - CBVs: When you need more structured and reusable code.
+  - Generic Views: CRUD operations with minimal boilerplate.
+  - Viewsets: Fully RESTful APIs with automatic URL routing
 
 
 
