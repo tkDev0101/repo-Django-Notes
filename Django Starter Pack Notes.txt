@@ -1,5 +1,5 @@
 -----------------------------------------------
-1. SetUp Virtual Environment 
+1. Set-Up Virtual Environment 
 
 1. Open your terminal or command prompt.
 2. Navigate to the folder where you want to create your project.
@@ -28,6 +28,10 @@ To start a new project, run these commands:
 If Django Welcome Page is there 
  = Environment is Ready !
 
+
+• To Close a Server
+	Ctrl + C
+
 -----------------------------------------------
 Understanding Django’s Project Structure
 
@@ -43,7 +47,7 @@ This file defines the routes for your application, mapping URLs to views.
 4. wsgi.py/asgi.py
 These files handle server deployment and communication between your app and the web server.
 
------------------------------------------------
+============================================================================================
 4. Creating My First Django App 
 
 • Apps  are modular components of your project
@@ -52,10 +56,11 @@ These files handle server deployment and communication between your app and the 
 -> python manage.py startapp app_name
 
 • Add app_name  to your project’s settings 
--> open settings.py and add 'app_name', 
+	-> open settings.py and add 'app_name', 
 to the INSTALLED_APPS list.
 
------------------------------------------------
+
+----------------------------------------------------------------------------------------------
 Understanding App Structure
 
 1. models.py: 
@@ -69,6 +74,12 @@ Handles user requests and responses.
 Create routes for this app ( create this file manually).
 Link views to URLS in urls.py
 
+
+-----------------------------------------------
+1.1. What is a Model?
+Django uses models to define the structure of your database
+
+-----------------------------------------------
 2.1. What is a View?
 A view is a Python function that takes a web request and returns a web response.
 • Open myapp/views.py
@@ -78,6 +89,7 @@ from django.http import HttpResponse
 def home(request):                                                     
     return HttpResponse("Hello, World!")             
 
+-----------------------------------------------
 3.1. What are Urls?
 • Now, connect this view to a URL. 
 • Open myproject/urls.py 
@@ -89,6 +101,7 @@ urlpatterns = [
     path('', views.home, name='home'),               
 ]                                                                                       
 
+-----------------------------------------------
 4. What is a Template?
 A template is an HTML file that lets you create dynamic web pages. 
 • Create a folder named templates inside your app_name directory.
@@ -104,6 +117,7 @@ A template is an HTML file that lets you create dynamic web pages.
 </body>   
 </html>   
 
+
 • Update your view to render this template:
 
     ->  open myapp/views.py                                        
@@ -114,7 +128,7 @@ def home(request):
     return render(request, 'home.html')              
                                                                                          
 
------------------------------------------------
+============================================================================================
 5. Models and Databases
 
 Django uses models to define the structure of your database. 
@@ -124,6 +138,7 @@ Django uses models to define the structure of your database.
 from django.db import models
 
 
+============================================================================================
 
                                        
 
