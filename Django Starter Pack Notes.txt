@@ -32,6 +32,11 @@ If Django Welcome Page is there
 • To Close a Server
 	Ctrl + C
 
+
+
+• Go Back One Folder:
+	cd ..
+
 -----------------------------------------------
 Understanding Django’s Project Structure
 
@@ -50,10 +55,10 @@ These files handle server deployment and communication between your app and the 
 ============================================================================================
 4. Creating My First Django App 
 
-• Apps  are modular components of your project
+• Apps are modular components of your project
 
 • Generate an app
--> python manage.py startapp app_name
+	-> python manage.py startapp app_name
 
 • Add app_name  to your project’s settings 
 	-> open settings.py and add 'app_name', 
@@ -132,13 +137,79 @@ def home(request):
 5. Models and Databases
 
 Django uses models to define the structure of your database. 
+
 • Open myapp/models.py 
 • Define a model:
 
-from django.db import models
+from django.db import models                                     
+                                                                                                  
+class Item(models.Model):                                              
+    name = models.CharField(max_length=50)       
+    price = models.IntegerField()     
+    desc = models.TextField(blank=True, null=True) 
+    created_at = models.DateTimeField(auto_now_add =True)                                                                                     
+
+    def __str__ (self):
+        return self.name
+
+
+
+      def _str_ (self):                                                           
+           Return self.name                                                                                                                                                       
+
+- Apply migrations to create the database table:
+• python manage.py makemigrations
+• python manage.py migrate
 
 
 ============================================================================================
+6. Django Admin Panel
+
+ - Create a superuser and access the admin panel at /admin.
+• python manage.py createsuperuser
+
+- Use Django’s admin interface to add and manage items. 
+- Register the model in admin.py :
+
+from django.contrib import admin                       
+from .models import Item                                        
+                                                                                           
+admin.site.register(Item)                                          
+
+
+============================================================================================
+7. User authentication 
+
+8. Forms and Validations
+
+9. Static and Media Files
+-----------------------------------------------
+
+============================================================================================
+C.R.U.D Functionality
+
+• C -     POST   Request
+• R -        GET   Request
+• U -        PUT   Request
+• D - DELETE   Request
+
+-----------------------------------------------
+
+-----------------------------------------------
+
+-----------------------------------------------
+
+I will provide you with the material from a chat about learning django as a beginner 
+
+Based on this material and your own knowledge 
+
+Please expand further on the transcript and provide more details and a bit more advanced topics
+
+
+
+
+
+
 
                                        
 
