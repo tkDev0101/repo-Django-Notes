@@ -87,6 +87,7 @@ Django uses models to define the structure of your database
 -----------------------------------------------
 2.1. What is a View?
 A view is a Python function that takes a web request and returns a web response.
+
 • Open myapp/views.py
 
 from django.http import HttpResponse              
@@ -103,8 +104,11 @@ from django.urls import path
 from myapp import views                                      
                                                                                          
 urlpatterns = [                                                            
-    path('', views.home, name='home'),               
-]                                                                                       
+    path(	             
+]            
+
+!! Include App Url in main Project Url !!
+	- path('demoapp2/', include('demoapp2.urls')),                                                                           
 
 -----------------------------------------------
 4. What is a Template?
