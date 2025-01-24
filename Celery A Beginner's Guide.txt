@@ -45,6 +45,50 @@ Key Components of Celery
  . Examples: Redis, SQLite, PostgreSQL.
 
 
+
+
+----------------------------------------------------------------------------------------------
+Setting up Celery in a Django project
+
+1. Install Dependencies: 
+• pip install celery[redis]  django-celery-results
+
+2. Configure Celery in Django: 
+ - Create a celery.py File: 
+• In the same directory as your settings.py file.
+ - Update _init_.py:
+• In the same directory as your celery.py file, edit the _init_.py file.
+ - Configure Celery Settings:
+• In settings.py, add the Celery-related configurations.
+
+3. Define Tasks: 
+ - In your Django apps, create a file called tasks.py.
+
+4. Set Up Django to Store Task Results: 
+ - To store task results in the database, you'll need to configure django-celery-results:
+
+5. Start the Celery Worker: 
+- Run the Celery worker to start processing tasks:
+• celery -A myproject worker --loglevel=info
+
+6. Trigger a Task: 
+ - Call the Celery task from your Django application. For eg., in a view.
+
+
+7. Verify Everything Works: 
+
+1. Start your Redis server:
+• redis-server
+
+2. Start the Celery worker:
+• celery -A your_project_name worker --loglevel=info
+
+3. Run your Django development server:
+• python manage.py runserver
+
+4. Visit the endpoint where you trigger the task (e.g., /test-celery/) and check the worker logs to see if the task was executed.
+
+
 ----------------------------------------------------------------------------------------------
  Setting Up Celery
 
