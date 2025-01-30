@@ -8,6 +8,11 @@
 • python -m venv env
 • .\env\Scripts\activate
 
+• To Close a Server
+	Ctrl + C
+• Go Back One Folder:
+	cd ..
+
 -----------------------------------------------
 2. Install Django
 
@@ -27,15 +32,6 @@ To start a new project, run these commands:
 
 If Django Welcome Page is there 
  = Environment is Ready !
-
-
-• To Close a Server
-	Ctrl + C
-
-
-
-• Go Back One Folder:
-	cd ..
 
 -----------------------------------------------
 Understanding Django’s Project Structure
@@ -64,6 +60,9 @@ These files handle server deployment and communication between your app and the 
 	-> open settings.py and add 'app_name', 
 to the INSTALLED_APPS list.
 
+
+• Add - Include App Url in main Project Url
+	- path('demoapp2/', include('demoapp2.urls')),                                                                           
 
 ----------------------------------------------------------------------------------------------
 Understanding App Structure
@@ -104,15 +103,13 @@ from django.urls import path
 from myapp import views                                      
                                                                                          
 urlpatterns = [                                                            
-    path(	             
+    path('home/', views.home, name='home'),	             
 ]            
-
-!! Include App Url in main Project Url !!
-	- path('demoapp2/', include('demoapp2.urls')),                                                                           
 
 -----------------------------------------------
 4. What is a Template?
 A template is an HTML file that lets you create dynamic web pages. 
+
 • Create a folder named templates inside your app_name directory.
 • Add a file called home.html with this content:
 
